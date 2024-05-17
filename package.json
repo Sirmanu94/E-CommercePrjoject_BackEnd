@@ -1,0 +1,27 @@
+{
+  "name": "e-commerceprjoject_backend",
+  "version": "1.0.0",
+  "description": "E-commerce exercise live di Giovanni",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sirmanu94/E-CommercePrjoject_BackEnd.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sirmanu94/E-CommercePrjoject_BackEnd/issues"
+  },
+  "homepage": "https://github.com/Sirmanu94/E-CommercePrjoject_BackEnd#readme",
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-async-errors": "^3.1.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.0"
+  }
+}
