@@ -2,9 +2,9 @@ CREATE TABLE users (
 id BIGINT AUTO_INCREMENT PRIMARY KEY ,
 name VARCHAR(50),
 surname VARCHAR (50),
-mail VARCHAR(100) NOT NULL,
+mail VARCHAR(255) NOT NULL UNIQUE, 
 password VARCHAR(250) NOT NULL,
-role_id BIGINT NOT NULL,
+role_id BIGINT NOT NULL ,
 created_at timestamp default current_timestamp NOT NULL
 );
 

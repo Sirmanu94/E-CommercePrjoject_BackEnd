@@ -1,14 +1,9 @@
 import express from "express"
 import { createPool, createConnection } from 'mysql'
-// var mysql      = require('mysql');
+
 
 const server = express()
-// const pool= createPool({
-//   host     : 'localhost',
-//   user     : 'root',
-//   password : 'root',
-//   database : 'prova'
-// })
+
 
 
 //TODO: COLLEGARE DATA BASE (UTILIZZARE MYSQL)
@@ -16,7 +11,7 @@ var connection = createConnection({
   host     : 'localhost',
   user     : 'root',
   password : '',
-  database : 'prova'
+  database : 'e-commerce Giovanni'
 });
 
 connection.connect();
@@ -46,10 +41,13 @@ server.post('/login', (req, res) => {
 //post registrazione
 server.post('/registrazione', (req, res) => {
   const dataUser= req.body
-var user  = { name: dataUser.name, email: dataUser.email, password: dataUser.password };
+var user  = { name: dataUser.name, surname: dataUser.last_name, mail: dataUser.email, password: dataUser.password, role_id:2 };
+
 var query = connection.query('INSERT INTO users SET ?', user, function (error, results, fields) {
   if (error){
-    res.status(500).json({msg: "error"})
+    console.log(error);
+     res.status(500).json({msg: 'database error'}) 
+     return
   }
 
   res.status(200).json(dataUser)
